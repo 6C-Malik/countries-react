@@ -1,12 +1,16 @@
-import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
+import Notfound from "./pages/Notfound"
+import About from "./pages/About"
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <h1>Hello react</h1>
-      <Home />
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path='*' element={<Notfound />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
-
-export default App;
